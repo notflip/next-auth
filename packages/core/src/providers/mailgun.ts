@@ -64,7 +64,7 @@ export default function MailGun(config: EmailUserConfig): EmailConfig {
       form.append("html", html({ host, url, theme }))
       form.append("text", text({ host, url }))
 
-      const res = await fetch(`https://api.mailgun.net/v3/${domain}/messages`, {
+      const res = await fetch(`https://api.eu.mailgun.net/v3/${domain}/messages`, {
         method: "POST",
         headers: {
           Authorization: `Basic ${btoa(`api:${provider.apiKey}`)}`,
